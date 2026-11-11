@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina de agentes · Parent Portal 2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><div></div></div>
+      <div class="brand-text">
+        <span class="brand-name">OFICINA IA</span>
+        <span class="pixel small muted">laboratorio de agentes</span>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <span id="mode" class="chip">Conectando…</span>
+    <div class="battery-box">
+      <div class="battery" aria-hidden="true"><div id="battery-fill"></div></div>
+      <div class="battery-text">
+        <span id="quota-label" class="strong">IA 100/100</span>
+        <span class="tiny muted">llamadas de hoy</span>
+      </div>
+      <button id="recharge" type="button" class="btn-pill">Recargar</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap stack">
+  <div>
+    <h1>Parent Portal 2.0 · el equipo en vivo</h1>
+    <p class="lead">Nueve perfiles, cada uno dueño de un riesgo. Activos de inicio: los de fase 0–1. Haz clic en una mesa para ajustar su rol.</p>
+  </div>
+
+  <form id="task-form" class="card row-form">
+    <div class="field">
+      <label for="tarea">Nueva función o problema del portal</label>
+      <input id="tarea" type="text" autocomplete="off" placeholder="Ej.: módulo de autorizaciones para salidas escolares">
+    </div>
+    <button type="submit" class="btn btn-accent">Añadir a la cola</button>
+    <button id="sample" type="button" class="btn">Tarea de ejemplo</button>
+  </form>
+
+  <details class="card" id="context-card">
+    <summary class="strong">Contexto común para todo el equipo</summary>
+    <div class="stack-sm" style="margin-top:12px">
+      <label for="context" class="small muted">Lo leen todos los agentes antes de su rol. Cámbialo para que trabajen en cualquier otro proyecto.</label>
+      <textarea id="context" rows="4"></textarea>
+      <div class="inline">
+        <button id="reset-context" type="button" class="btn btn-sm">Restaurar contexto del Parent Portal</button>
+      </div>
+    </div>
+  </details>
+
+  <section class="office" aria-label="Oficina">
+    <div class="wall">
+      <div class="board">
+        <span class="strong">Cola de trabajo</span>
+        <span id="c-line1" class="c-blue">En cola: 0 · Trabajando: 0</span>
+        <span id="c-line2" class="c-amber">Esperando cuota: 0</span>
+        <span id="c-line3" class="c-green">Listos: 0</span>
+      </div>
+      <div class="window" aria-hidden="true"><div class="pane"><i class="cloud c1"></i></div><div class="pane"></div><div class="pane"></div><div class="pane"><i class="cloud c2"></i></div></div>
+      <div class="clock" aria-hidden="true"><i class="hand-m"></i><i class="hand-h"></i></div>
+      <div class="window" aria-hidden="true"><div class="pane"></div><div class="pane"><i class="cloud c3"></i></div><div class="pane"><i class="cloud c2"></i></div><div class="pane"></div></div>
+    </div>
+    <div id="floor" class="floor"></div>
+  </section>
+
+  <div class="two-col">
+    <section class="card stack-sm" aria-label="Especialidad del agente">
+      <div class="between">
+        <h2 id="sel-title">Mesa de</h2>
+        <label class="check"><input id="sel-on" type="checkbox"> Activo en la cadena</label>
+      </div>
+      <label for="especialidad" class="strong small">Especialidad (instrucciones para este agente)</label>
+      <textarea id="especialidad" rows="8"></textarea>
+      <div class="inline">
+        <button id="reset" type="button" class="btn btn-sm">Restaurar original</button>
+        <span id="save-msg" role="status" class="small muted">Cargando…</span>
+      </div>
+    </section>
+
+    <section class="card stack-sm" aria-label="En la mesa ahora">
+      <h2 id="view-title">En la mesa ahora</h2>
+      <div id="view-text" class="viewer">Aquí verás lo que escribe cada agente mientras trabaja.</div>
+      <div id="copy-row" class="inline" hidden>
+        <button id="copy" type="button" class="btn btn-sm btn-accent">Copiar texto</button>
+        <span id="copy-msg" class="small muted"></span>
+      </div>
+      <div id="drafts-box" class="stack-xs" hidden>
+        <span class="strong small">Borradores (carpeta drafts/)</span>
+        <div id="drafts" class="chips"></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card stack-sm" aria-label="Registro">
+    <h2>Registro</h2>
+    <ol id="log" class="log"></ol>
+  </section>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "office",
+  "version": "1.0.0",
+  "description": "Oficina de agentes pixel-art conectada a Claude (API de Anthropic)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
