@@ -1,5 +1,6 @@
 :root{--ink:#1E1B18;--paper:#FFFDF8;--muted:#5C534A;--accent:#E8542F}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{margin:0;background-color:#F6EFE2;background-image:radial-gradient(#E2D6BF 1px,transparent 1px);background-size:18px 18px;font-family:'Nunito',system-ui,sans-serif;color:var(--ink);font-weight:700}
 h1{margin:0;font-size:30px;font-weight:900;letter-spacing:-.02em}
 h2{margin:0;font-size:20px;font-weight:900}
