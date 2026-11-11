@@ -11,6 +11,12 @@ Viene configurada con el equipo de **Parent Portal 2.0** (9 perfiles), pero el c
 
 ## Arranque
 
+**En Mac, lo más fácil:** haz doble clic en `Abrir oficina.command`. La primera vez te pide la API key, la guarda y abre la oficina en el navegador. Si macOS dice que no puede abrirlo porque es de un desarrollador no identificado: clic derecho → Abrir → Abrir.
+
+No abras `public/index.html` con doble clic: la oficina necesita el servidor encendido.
+
+**Desde el Terminal:**
+
 ```bash
 cp .env.example .env      # y pega tu ANTHROPIC_API_KEY
 npm start

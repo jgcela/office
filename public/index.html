@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="file-warning" hidden style="background:#FBE3DF;border-bottom:3px solid #1E1B18;padding:16px 24px;font-weight:800">
+  Esta página no se abre con doble clic. Cierra esta pestaña y haz doble clic en <b>«Abrir oficina.command»</b> (en la carpeta del proyecto), o ejecuta <code>npm start</code> y entra en http://127.0.0.1:8020
+</div>
+<script>if (location.protocol === 'file:') document.getElementById('file-warning').hidden = false;</script>
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="brand">
